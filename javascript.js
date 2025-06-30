@@ -22,6 +22,10 @@ funksjonen)
 ******************************************************************************/
 
 // Skriv koden for oppgave 1 her
+/* tar inn et number og returnerer en string som sier om tallet er et partall eller oddetall
+ * @param {number} numb
+ * @returns {string}
+ */
 function odd_number(numb) {
   return numb % 2 == 0 ? "Partall" : "Oddetall";
 }
@@ -42,6 +46,11 @@ Eksempel: "Dette er kult" skal returnere "DETTE ER KULT!"
 ******************************************************************************/
 
 // Skriv koden for oppgave 2 her
+/*
+ * Tar inn en string og konverterer stringen til UPPER CASE og legger til en ! på slutten
+ * @param {string} msg
+ * @returns {string}
+ */
 const returnAsUpper = (msg) => {
   return `${msg.toUpperCase()}!`;
 };
@@ -71,7 +80,36 @@ Hvis ingen timeverdi mottas, skal funksjonen returnere en feilmelding.
 ******************************************************************************/
 
 // Skriv koden for oppgave 3 her
-function 
+/*
+ * Tar inn navn og et nummer for å returnere en melding eller feilkode utifra nummeret
+ * @param {string} name
+ * @param {number} hour
+ * @returns {string}
+ */
+function timeOfDayGreeting(name, hour) {
+  if (!name) {
+    throw SyntaxError("Please provide a name as a string");
+  }
+  if (!hour) {
+    throw SyntaxError("Please provide a hour as a number");
+  }
+
+  if (hour < 0) {
+    return "Ugyldig tid";
+  } else if (hour >= 0 && hour <= 5) {
+    return `God Natt ${name}!`;
+  } else if (hour >= 6 && hour <= 11) {
+    return `God Morgen ${name}!`;
+  } else if (hour >= 12 && hour <= 17) {
+    return `God Ettermiddag ${name}!`;
+  } else if (hour >= 18 && hour <= 23) {
+    return `God Kveld ${name}!`;
+  } else {
+    return "Ugyldig tid";
+  }
+}
+
+// console.log(timeOfDayGreeting("test", 24));
 
 /******************************************************************************
 4.
