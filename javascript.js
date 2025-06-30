@@ -290,3 +290,23 @@ Returner "😎Kun primitive verdier😎".
 ******************************************************************************/
 
 // Skriv koden for oppgave 8 her
+/*
+ * Funksjon som legger til emoji og gjør annet basert på hvilken data-type som blir gitt til funksjonen
+ * @returns {string}
+ */
+
+function challengeTwo(flexParam) {
+  //   console.log(typeof flexParam);
+  switch (typeof flexParam) {
+    case "string":
+      return flexParam + " 😎";
+    case "number":
+      return (flexParam * 2).toString() + " 😎";
+    case "boolean":
+      return flexParam ? "😎Ja😎" : "😎Slapp av😎";
+    default:
+      return "😎Kun primitive verdier😎";
+  }
+}
+
+// console.log(challengeTwo(challengeOne));
