@@ -27,6 +27,8 @@ funksjonen)
  * @returns {string}
  */
 function odd_number(numb) {
+  // bruk av ternary for å returnere om number delt på 2 gir igjen 0 eller ikke.
+  // Om det er 0 igjen etter deling så vil det si Partall, ellers Oddetall
   return numb % 2 == 0 ? "Partall" : "Oddetall";
 }
 
@@ -52,6 +54,7 @@ Eksempel: "Dette er kult" skal returnere "DETTE ER KULT!"
  * @returns {string}
  */
 const returnAsUpper = (msg) => {
+  // bruk av template literals og .toUpperCase() method for å konvertere stringen til store bokstaver samt legge på ! uten å måtte bruke +
   return `${msg.toUpperCase()}!`;
 };
 
@@ -88,24 +91,26 @@ Hvis ingen timeverdi mottas, skal funksjonen returnere en feilmelding.
  */
 function timeOfDayGreeting(name, hour) {
   if (!name) {
+    // SyntaxError om name parameter ikke har blitt gitt
     throw SyntaxError("Please provide a name as a string");
   }
   if (!hour) {
+    // SyntaxError om hour parameter ikke har blitt gitt
     throw SyntaxError("Please provide a hour as a number");
   }
 
   if (hour < 0) {
-    return "Ugyldig tid";
+    return "Ugyldig tid"; // ugyldig tid om hour er mindre enn 0
   } else if (hour >= 0 && hour <= 5) {
-    return `God Natt ${name}!`;
+    return `God Natt ${name}!`; // God natt om tid er mellom 0 og 5
   } else if (hour >= 6 && hour <= 11) {
-    return `God Morgen ${name}!`;
+    return `God Morgen ${name}!`; // God Morgen om tid er mellom 6 og 11
   } else if (hour >= 12 && hour <= 17) {
-    return `God Ettermiddag ${name}!`;
+    return `God Ettermiddag ${name}!`; // God ettermiddag om tid er mellom 12 og 17
   } else if (hour >= 18 && hour <= 23) {
-    return `God Kveld ${name}!`;
+    return `God Kveld ${name}!`; // God kveld om tid er mellom 18 og 23
   } else {
-    return "Ugyldig tid";
+    return "Ugyldig tid"; // som enn fallback - ugyldig tid.
   }
 }
 
@@ -133,7 +138,7 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
  * @returns {array}
  */
 function firstAndLastRemoved(arr) {
-  return arr.slice(1, -1);
+  return arr.slice(1, -1); // slicing av array - starter på plass nr 2 og avsluttes på nest-siste element
 }
 
 // console.log(firstAndLastRemoved(["En", "To", "Tre", "Fire", "Fem", "Seks"]));
@@ -164,6 +169,7 @@ Eksempel 3: "   vanskelig        " skal returnere "gøy".
  * @returns {string}
  */
 convertString = (msg) => {
+  // bruk av veldig simpel regex med global og case insensitive flagg for å bytte ut vanskelig med gøy, samt trimme bort all white-space på start og slutt av string.
   return msg.replaceAll(/vanskelig/gi, "gøy").trim();
 };
 
@@ -213,11 +219,16 @@ function arrayManipulation(arr) {
 
 // console.log(arrayManipulation(items));
 
-const extraChallenge = (arr) => {
+const extraChallenge = (element) => {
+  // ta utgangspunkt i at funksjonen får en array -> benytt forrige funksjon til å manipulere arrayen.
+  if (!Array.isArray(element)) {
+    return "Please provide an array to this function";
+  }
+  arr = arrayManipulation(element);
   return arr.split(" | ").filter((e) => e.includes("e"));
 };
 
-// console.log(extraChallenge(arrayManipulation(items)));
+console.log(extraChallenge(items));
 
 /******************************************************************************
 7.
