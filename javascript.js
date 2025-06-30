@@ -206,8 +206,8 @@ function arrayManipulation(arr) {
   const arrIndex = arr.findIndex((el) => el == "Viskelær");
   arr[arrIndex] = "Linjal";
   // Ta utgangspunkt i at Penn og Notatbok nå er indeks 0 og 1 iom vi har allerede tatt bort første indeks
-  const replacementWord = "Markeringspenn"; // for enkel bytting
-  arr.splice(0, 2, replacementWord); // starter ny array på indeks 2, som burde starte arrayen etter notatbok. (linjal, blyant, markør)
+  const replacementWord = "Markeringspenn"; // bare for å lagre ordet i en variable istedenfor hard coding
+  arr.splice(0, 2, replacementWord); // splicer på indeks 2, som burde starte arrayen etter notatbok. (linjal, blyant, markør) - Legg til ordet
   return arr.join(" | ");
 }
 
