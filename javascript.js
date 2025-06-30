@@ -127,6 +127,16 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 ******************************************************************************/
 
 // Skriv koden for oppgave 4 her
+/*
+ * Funksjon som tar inn en array og returnerer arrayen med først og siste indeks fjernet
+ * @param {array} arr
+ * @returns {array}
+ */
+function firstAndLastRemoved(arr) {
+  return arr.slice(1, -1);
+}
+
+// console.log(firstAndLastRemoved(["En", "To", "Tre", "Fire", "Fem", "Seks"]));
 
 /******************************************************************************
 5.
@@ -148,6 +158,16 @@ Eksempel 3: "   vanskelig        " skal returnere "gøy".
 ******************************************************************************/
 
 // Skriv koden for oppgave 5 her
+/*
+ * Funksjon som erstatter vanskelig med gøy og fjerner white-space fra starten og slutten.
+ * @param {string} msg
+ * @returns {string}
+ */
+convertString = (msg) => {
+  return msg.replaceAll(/vanskelig/gi, "gøy").trim();
+};
+
+// console.log(convertString("  Javascript er vanskelig  "));
 
 /******************************************************************************
 6.
