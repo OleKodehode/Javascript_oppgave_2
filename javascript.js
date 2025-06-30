@@ -193,6 +193,28 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 ******************************************************************************/
 
 // Skriv koden for oppgave 6 her
+/*
+ * Funksjon som tar inn en array, fjerner første index, erstatter noe spesifikt, fjerner noe annet spesifikt og kombinerer alt
+ * i en string med | som separator
+ * @param {array} arr
+ * returns {string}
+ */
+function arrayManipulation(arr) {
+  // Fjerning av første index
+  arr.shift();
+  // Finn Viskelær og bytt det ut med linjal
+  const arrIndex = arr.findIndex((el) => el == "Viskelær");
+  arr[arrIndex] = "Linjal";
+  // Ta utgangspunkt i at Penn og Notatbok nå er indeks 0 og 1 iom vi har allerede tatt bort første indeks
+  const replacementWord = "Markeringspenn"; // for enkel bytting
+  const newArr = arr.slice(0, 2); // starter ny array på indeks 2
+  newArr.unshift(replacementWord); // sett inn Markeringspenn på første posisjon
+  console.log(newArr);
+
+  return newArr.join(" | ");
+}
+
+console.log(arrayManipulation(items));
 
 /******************************************************************************
 7.
