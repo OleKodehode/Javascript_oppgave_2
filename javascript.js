@@ -207,9 +207,8 @@ function arrayManipulation(arr) {
   arr[arrIndex] = "Linjal";
   // Ta utgangspunkt i at Penn og Notatbok nå er indeks 0 og 1 iom vi har allerede tatt bort første indeks
   const replacementWord = "Markeringspenn"; // for enkel bytting
-  const newArr = arr.slice(2); // starter ny array på indeks 2, som burde starte arrayen etter notatbok. (linjal, blyant, markør)
-  newArr.unshift(replacementWord); // sett inn Markeringspenn på første posisjon
-  return newArr.join(" | ");
+  arr.splice(0, 2, replacementWord); // starter ny array på indeks 2, som burde starte arrayen etter notatbok. (linjal, blyant, markør)
+  return arr.join(" | ");
 }
 
 // console.log(arrayManipulation(items));
