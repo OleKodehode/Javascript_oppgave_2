@@ -244,6 +244,24 @@ Eksempel 4: (["En", "To", "Tre"], "To") --> ["En", "Tre"]
 ******************************************************************************/
 
 // Skriv koden for oppgave 7 her
+/*
+ * Funksjon som tar inn enn array og en string, ser om array inneholder stringen. Om den gjør, fjern element og returner
+ * hvis ikke, legg til string på slutten av arrayen.
+ * @param {array} arr
+ * @param {string} str
+ * @returns {array}
+ */
+function challengeOne(arr, str) {
+  if (arr.includes(str)) {
+    arr.splice(arr.indexOf(str), 1);
+    return arr;
+  } else {
+    arr.push(str);
+    return arr;
+  }
+}
+
+// console.log(challengeOne(["En", "To", "Tre"], "To"));
 
 /******************************************************************************
 8.
