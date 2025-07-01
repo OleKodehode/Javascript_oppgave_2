@@ -224,6 +224,7 @@ const extraChallenge = (element) => {
   if (!Array.isArray(element)) {
     return "Please provide an array to this function";
   }
+  // kan egentlig hoppe over å sende arrayen til funksjonen, dog da må .split fjernes fra return statement
   arr = arrayManipulation(element);
   return arr.split(" | ").filter((e) => e.includes("e"));
 };
@@ -264,9 +265,11 @@ Eksempel 4: (["En", "To", "Tre"], "To") --> ["En", "Tre"]
  */
 function challengeOne(arr, str) {
   if (arr.includes(str)) {
+    // splice(index, 1) skal bare fjerne et element og gi resten av arrayen tilbake
     arr.splice(arr.indexOf(str), 1);
     return arr;
   } else {
+    // push legger til ett element på slutten av en array
     arr.push(str);
     return arr;
   }
@@ -308,6 +311,7 @@ Returner "😎Kun primitive verdier😎".
 
 function challengeTwo(flexParam) {
   //   console.log(typeof flexParam);
+  // Switch statement med typeof for å se hva for en data-type parameter er.
   switch (typeof flexParam) {
     case "string":
       return flexParam + " 😎";
